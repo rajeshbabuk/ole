@@ -269,9 +269,6 @@
                 tableName="OLE_NG_BAT_PRF_S"/>
     </changeSet>
 
-
-
-
     <changeSet context="bootstrap" author="ole" id="OLE_NG_BAT_PRCS_JOB_T">
         <createTable tableName="OLE_NG_BAT_PRCS_JOB_T">
             <column name="JOB_ID"   type="INTEGER(10)">
@@ -311,6 +308,14 @@
                 incrementBy="1"
                 startWith="1"
                 tableName="OLE_NG_BAT_PRCS_JOB_S"/>
+    </changeSet>
+
+    <changeSet author="ole" id="OLE_NG_BAT_PRCS_I">
+        <createIndex
+                indexName="OLE_NG_BAT_PRCS_I"
+                tableName="OLE_NG_BAT_PRCS_JOB_T">
+            <column name="PRF_ID" type="INTEGER(10)"/>
+        </createIndex>
     </changeSet>
 
     <changeSet context="bootstrap" author="ole" id="OLE_NG_BAT_JOB_DETAILS_T">
@@ -358,6 +363,14 @@
                 tableName="OLE_NG_BAT_JOB_DETAILS_S"/>
     </changeSet>
 
+    <changeSet author="ole" id="OLE_NG_BAT_JOB_I">
+        <createIndex
+                indexName="OLE_NG_BAT_JOB_I"
+                tableName="OLE_NG_BAT_JOB_DETAILS_T">
+            <column name="JOB_ID" type="INTEGER(10)"/>
+        </createIndex>
+    </changeSet>
+
     <changeSet context="bootstrap" author="ole" id="OLE_NG_BAT_PRF_ID_FK">
         <addForeignKeyConstraint baseTableCatalogName="ole"
                                  baseTableSchemaName="ole"
@@ -380,12 +393,6 @@
                                  onUpdate="RESTRICT"
                                  referencedColumnNames="JOB_ID"
                                  referencedTableName="OLE_NG_BAT_PRCS_JOB_T"/>
-    </changeSet>
-
-    <changeSet context="bootstrap" author="ole" id="OLE_DLVR_PTRN_BILL_FEE_TYP_T_ITM_LOC">
-        <addColumn tableName="OLE_DLVR_PTRN_BILL_FEE_TYP_T">
-            <column name="ITM_LOC"   type="VARCHAR(600)"/>
-        </addColumn>
     </changeSet>
 
 </databaseChangeLog>
