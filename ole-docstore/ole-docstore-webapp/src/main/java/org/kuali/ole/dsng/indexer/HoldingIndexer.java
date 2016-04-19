@@ -43,6 +43,11 @@ public class HoldingIndexer extends OleDsNgIndexer {
         commitDocumentToSolr(solrInputDocuments);
     }
 
+    @Override
+    public void deleteDocument(String id) {
+
+    }
+
     public Map<String,SolrInputDocument> getInputDocumentForHoldings(HoldingsRecord holdingsRecord,Map parameterMap) {
         SolrInputDocument holdingsSolrInputDocument = buildSolrInputDocument(holdingsRecord, parameterMap);
 

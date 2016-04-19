@@ -48,7 +48,6 @@ public abstract class BatchFileProcessor extends BatchUtil {
     private MatchPointProcessor matchPointProcessor;
 
     private static final Logger LOG = LoggerFactory.getLogger(BatchFileProcessor.class);
-    private MarcXMLConverter marcXMLConverter;
     private SolrRequestReponseHandler solrRequestReponseHandler;
     protected SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss");
     private MarcStreamingUtil marcStreamingUtil;
@@ -167,17 +166,6 @@ public abstract class BatchFileProcessor extends BatchUtil {
             return userSession.getPrincipalName();
         }
         return null;
-    }
-
-    public MarcXMLConverter getMarcXMLConverter() {
-        if(null == marcXMLConverter) {
-            marcXMLConverter = new MarcXMLConverter();
-        }
-        return marcXMLConverter;
-    }
-
-    public void setMarcXMLConverter(MarcXMLConverter marcXMLConverter) {
-        this.marcXMLConverter = marcXMLConverter;
     }
 
     @Override
