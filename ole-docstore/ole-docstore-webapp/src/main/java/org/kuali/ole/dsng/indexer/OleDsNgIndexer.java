@@ -151,7 +151,7 @@ public abstract class OleDsNgIndexer  implements DocstoreConstants {
         getSolrRequestReponseHandler().deleteFromSolr(query);
     }
 
-    public UpdateResponse updateDeletedBibDocumentToSolr(String bibId) {
+    public UpdateResponse indexDeletedBibInfoToSolr(String bibId) {
         String newId = bibId + "_d";
         SolrInputDocument solrInputDocument = new SolrInputDocument();
         solrInputDocument.setField(DOC_TYPE, BIBLIOGRAPHIC_DELETE);

@@ -66,7 +66,7 @@ public class BibIndexer extends OleDsNgIndexer {
     @Override
     public void deleteDocument(String bibId) {
         deleteBibDocumentFromSolr(bibId);
-        updateDeletedBibDocumentToSolr(bibId);
+        indexDeletedBibInfoToSolr(bibId);
     }
 
     public Map<String,SolrInputDocument> getInputDocumentForBib(BibRecord bibRecord,Map parameterMap) {
