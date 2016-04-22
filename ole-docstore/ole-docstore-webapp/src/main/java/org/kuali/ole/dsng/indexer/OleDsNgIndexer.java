@@ -167,7 +167,7 @@ public abstract class OleDsNgIndexer  implements DocstoreConstants {
             Set<String> resultField = solrFieldMap.keySet();
             for (Iterator<String> iterator1 = resultField.iterator(); iterator1.hasNext(); ) {
                 String key = iterator1.next();
-                if (!key.equalsIgnoreCase("_version_")) {
+                if (!key.equalsIgnoreCase(OleNGConstants._VERSION_)) {
                     Object value = solrFieldMap.get(key);
                     solrInputDocument.addField(key, value);
                 }
@@ -183,7 +183,7 @@ public abstract class OleDsNgIndexer  implements DocstoreConstants {
                 Set<String> keySet = solrDocMap.keySet();
                 for (Iterator<String> iterator1 = keySet.iterator(); iterator1.hasNext(); ) {
                     String key = iterator1.next();
-                    if (!key.equalsIgnoreCase("_version_")) {
+                    if (!key.equalsIgnoreCase(OleNGConstants._VERSION_)) {
                         Object value = solrDocMap.get(key);
                         solrInputDocument.addField(key, value);
                     }
